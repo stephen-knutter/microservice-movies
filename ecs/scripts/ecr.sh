@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 # config
 
 set -e
@@ -11,7 +10,6 @@ IMAGE_BASE="microservicemovies"
 ECR_URI="${AWS_ACCOUNT_ID}.dkr.ecr.${ECS_REGION}.amazonaws.com"
 SHORT_GIT_HASH=$(echo $CIRCLE_SHA1 | cut -c -7)
 TAG=$SHORT_GIT_HASH
-
 
 # helpers
 
@@ -40,7 +38,7 @@ tag_and_push_images() {
   docker push ${ECR_URI}/${NAMESPACE}/movies-service-review:${TAG}
   docker push ${ECR_URI}/${NAMESPACE}/web-service-review:${TAG}
   docker push ${ECR_URI}/${NAMESPACE}/swagger-review:${TAG}
-  echo "Images tagged and pushed!"
+  echo "Images tagged and pushed"
 }
 
 # main
