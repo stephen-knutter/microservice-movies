@@ -1,5 +1,7 @@
+require('dotenv').config();
 const AWS = require('aws-sdk');
 
+console.log('account id: ', process.env.AWS_ACCOUNT_ID);
 
 // globals
 
