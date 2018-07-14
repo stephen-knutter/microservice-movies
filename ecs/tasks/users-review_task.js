@@ -78,6 +78,6 @@ function createUsersTaskDefinition(accountID, region, tag, family, revision) {
   return taskDefinition;
 }
 
-model.exports = {
+module.exports = {
   createUsersTaskDefinition
 };
