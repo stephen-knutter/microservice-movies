@@ -10,8 +10,8 @@ const AWS_USERNAME = process.env.AWS_USERNAME;
 const AWS_CONFIG_REGION = 'us-west-2';
 const SHORT_GIT_HASH = process.env.CIRCLE_SHA1.substring(0, 7);
 const VPC_ID = process.env.MICROSERVICE_VPC_ID;
-const DEFAULT_TARGET_GROUP_ARN;
-const LOAD_BALANCER_ARN;
+const DEFAULT_TARGET_GROUP_ARN = process.env.DEFAULT_TARGET_GROUP_ARN;
+const LOAD_BALANCER_ARN = process.env.LOAD_BALANCER_ARN;
 
 let USERS_TARGET_GROUP_ARN;
 let MOVIES_TARGET_GROUP_ARN;
@@ -66,8 +66,10 @@ function addListener(port) {
          Type: 'forward'
        }
      ],
-     LoadBalancerArn: LOAD
-   }
+     LoadBalancerArn: LOAD_BALANCER_ARN,
+     Port: port,
+     Protocol: 'HTTP'
+   };
  }); 
 }
 
