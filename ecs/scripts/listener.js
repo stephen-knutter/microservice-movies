@@ -1,5 +1,5 @@
+require('dotenv').config();
 const AWS = require('aws-sdk');
-
 
 // globals
 
@@ -8,21 +8,18 @@ const AWS_ACCESS_KEY_ID = process.env.AWS_ACCESS_KEY_ID;
 const AWS_SECRET_ACCESS_KEY = process.env.AWS_SECRET_ACCESS_KEY;
 const AWS_USERNAME = process.env.AWS_USERNAME;
 const AWS_CONFIG_REGION = 'us-west-2';
-const LOAD_BALANCER_ARN = 'arn:aws:elasticloadbalancing:us-west-2:046505967931:loadbalancer/app/microservicemovies-review/493be740ee6aea54';
-
+const LOAD_BALANCER_ARN = process.env.LOAD_BALANCER_ARN;
 
 // config
 
-AWS.config = new AWS.Config();
+AWS.config = new AWS.config();
 AWS.config.accessKeyId = AWS_ACCESS_KEY_ID;
 AWS.config.secretAccessKey = AWS_SECRET_ACCESS_KEY;
 AWS.config.region = AWS_CONFIG_REGION;
 
-
 // init aws services
 
 const elbv2 = new AWS.ELBv2();
-
 
 // methods
 
@@ -45,7 +42,6 @@ function getPort() {
     });
   });
 }
-
 
 module.exports = {
   getPort

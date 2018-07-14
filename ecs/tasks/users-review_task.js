@@ -4,13 +4,13 @@ function createUsersTaskDefinition(accountID, region, tag, family, revision) {
       {
         name: 'users-service-review',
         image: `${accountID}.dkr.ecr.${region}.amazonaws.com\/microservicemovies\/users-service-review:${tag}`,
-        essential: true,
+        essentail: true,
         memoryReservation: 300,
         cpu: 300,
         portMappings: [
           {
             containerPort: 3000,
-            hostPort: 0,
+            hostPort: 0, // Will be dynamically sert
             protocol: 'tcp'
           }
         ],
@@ -46,7 +46,7 @@ function createUsersTaskDefinition(accountID, region, tag, family, revision) {
       {
         name: 'users-db-review',
         image: `${accountID}.dkr.ecr.${region}.amazonaws.com\/microservicemovies\/users-db-review:${tag}`,
-        essential: true,
+        essentail: true,
         memoryReservation: 300,
         cpu: 300,
         portMappings: [
@@ -78,6 +78,6 @@ function createUsersTaskDefinition(accountID, region, tag, family, revision) {
   return taskDefinition;
 }
 
-module.exports = {
+model.exports = {
   createUsersTaskDefinition
 };

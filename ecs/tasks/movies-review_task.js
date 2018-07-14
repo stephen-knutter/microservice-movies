@@ -10,7 +10,7 @@ function createMoviesTaskDefinition(accountID, region, tag, family, revision) {
         portMappings: [
           {
             containerPort: 3000,
-            hostPort: 0,
+            hostPort: 0, // Will be added dynamically
             protocol: 'tcp'
           }
         ],
