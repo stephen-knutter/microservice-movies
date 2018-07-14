@@ -127,7 +127,7 @@ return ensureAuthenticated()
   console.log('Target Group Added!');
   return port();
 })
-.then((res) => {
+.then((port) => {
   return addListener(port);
 })
 .then((res) => {
