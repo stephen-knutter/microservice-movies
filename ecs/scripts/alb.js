@@ -10,7 +10,8 @@ const AWS_USERNAME = process.env.AWS_USERNAME;
 const AWS_CONFIG_REGION = 'us-west-2';
 const SHORT_GIT_HASH = process.env.CIRCLE_SHA1.substring(0, 7);
 const VPC_ID = process.env.MICROSERVICE_VPC_ID;
-
+const DEFAULT_TARGET_GROUP_ARN;
+const LOAD_BALANCER_ARN;
 
 let USERS_TARGET_GROUP_ARN;
 let MOVIES_TARGET_GROUP_ARN;
@@ -26,7 +27,7 @@ AWS.config.region = AWS_CONFIG_REGION;
 // init aws services
 
 const elbv2 = new AWS.ELBv2();
-const iam = AWS.IAM();
+const iam = new AWS.IAM();
 
 // methods
 
@@ -54,6 +55,20 @@ function addTargetGroup(service, port, path) {
       resolve(data);
     });
   });
+}
+
+function addListener(port) {
+ return new Promise((resolve, reject) => {
+   var params = {
+     DefaultActions: [
+       {
+         TargetGroupArn: DEFAULT_TARGET_GROUP_ARN,
+         Type: 'forward'
+       }
+     ],
+     LoadBalancerArn: LOAD
+   }
+ }); 
 }
 
 // main
