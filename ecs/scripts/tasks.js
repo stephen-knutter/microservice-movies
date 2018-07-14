@@ -62,7 +62,7 @@ function registerUsersTD() {
 
 function registerMoviesTD() {
   const task = createMoviesTaskDefinition(AWS_ACCOUNT_ID, AWS_CONFIG_REGION, SHORT_GIT_HASH);
-  return registerTask(task)
+  return registerTaskDef(task)
   .then((res) => {
     console.log('Task Registered!');
     console.log(res.taskDefinition.taskDefinitionArn);
