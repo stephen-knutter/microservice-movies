@@ -6,7 +6,6 @@ function createMoviesService(cluster, name, targetGroup) {
     loadBalancers: [
       {
         targetGroupArn: targetGroup,
-        loadBalancerName: '',
         containerName: 'movies-service-review',
         containerPort: 3000
       }

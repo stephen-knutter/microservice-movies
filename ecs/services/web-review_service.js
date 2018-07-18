@@ -6,7 +6,6 @@ function createWebService(cluster, name, targetGroup) {
     loadBalancers: [
       {
         targetGroupArn: targetGroup,
-        loadBalancerName: '',
         containerName: 'web-service-review',
         containerPort: 9000
       }

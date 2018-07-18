@@ -6,7 +6,6 @@ function createUsersService(cluster, name, targetGroup) {
     loadBalancers: [
       {
         targetGroupArn: targetGroup,
-        loadBalancerName: '',
         containerName: 'users-service-review',
         containerPort: 3000
       }
