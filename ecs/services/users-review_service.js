@@ -1,11 +1,11 @@
-function createUsersService(cluster, name, targetGroup) {
+function createUsersService(cluster, name, targetGroupArn) {
   const params = {
     cluster: cluster,
     serviceName: name,
     taskDefinition: 'microservicemovies-review-users-td',
     loadBalancers: [
       {
-        targetGroup: targetGroup,
+        targetGroupArn: targetGroupArn,
         containerName: 'users-service-review',
         containerPort: 3000
       }
