@@ -47,4 +47,5 @@ jobs:
             sh ecs/scripts/ecr.sh
             node ecs/scripts/tasks.js
             node ecs/scripts/alb.js
+            node ecs/scripts/services.js
 

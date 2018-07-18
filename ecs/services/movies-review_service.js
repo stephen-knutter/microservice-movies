@@ -6,12 +6,12 @@ function createMoviesService(cluster, name, targetGroup) {
     loadBalancers: [
       {
         targetGroupArn: targetGroup,
-        containerName: "movies-service-review",
+        containerName: 'movies-service-review',
         containerPort: 3000
       }
     ],
     desiredCount: 1,
-    role: "ecsServiceRole"
+    role: 'ecsServiceRole'
   };
   return params;
 }

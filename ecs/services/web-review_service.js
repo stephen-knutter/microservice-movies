@@ -6,12 +6,12 @@ function createWebService(cluster, name, targetGroup) {
     loadBalancers: [
       {
         targetGroupArn: targetGroup,
-        containerName: "web-service-review",
+        containerName: 'web-service-review',
         containerPort: 9000
       }
     ],
     desiredCount: 1,
-    role: "ecsServiceRole"
+    role: 'ecsServiceRole'
   };
   return params;
 }
