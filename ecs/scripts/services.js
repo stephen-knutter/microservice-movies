@@ -45,7 +45,7 @@ function ensureAuthenticated() {
   });
 }
 
-function addService(services) {
+function addService(service) {
   return new Promise((resolve, reject) => {
     const params = service;
     ecs.createService(params, (err, data) => {
