@@ -1,17 +1,17 @@
-function createWebService(cluster, name, targetGroupArn) {
+function createWebService(cluster, name, targetGroup) {
   const params = {
     cluster: cluster,
     serviceName: name,
     taskDefinition: 'microservicemovies-review-web-td',
     loadBalancers: [
       {
-        targetGroupArn: targetGroupArn,
+        targetGroupArn: targetGroup,
         containerName: 'web-service-review',
         containerPort: 9000
       }
     ],
     desiredCount: 1,
-    role: 'ecsServiceRole'
+    role: ''
   };
   return params;
 }
