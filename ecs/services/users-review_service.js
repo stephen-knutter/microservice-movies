@@ -5,7 +5,6 @@ function createUsersService(cluster, name, targetGroup) {
     taskDefinition: 'microservicemovies-review-users-td',
     loadBalancers: [
       {
-        targetGroupArn: targetGroup,
         loadBalancerName: 'microservicemovies-review',
         containerName: 'users-service-review',
         containerPort: 3000

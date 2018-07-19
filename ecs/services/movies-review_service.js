@@ -5,7 +5,6 @@ function createMoviesService(cluster, name, targetGroup) {
     taskDefinition: 'microservicemovies-review-movies-td',
     loadBalancers: [
       {
-        targetGroupArn: targetGroup,
         loadBalancerName: 'microservicemovies-review',
         containerName: 'movies-service-review',
         containerPort: 3000
