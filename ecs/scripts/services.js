@@ -82,7 +82,7 @@ return ensureAuthenticated()
       USERS_TARGET_GROUP_ARN = group.TargetGroupArn; 
     }
     if (group.TargetGroupName.includes('movies')) {
-      MOVIES_TARGET_GROUP_ARN = group.TargetName; 
+      MOVIES_TARGET_GROUP_ARN = group.TargetGroupArn; 
     }
     if (group.TargetGroupName.includes('web')) {
       WEB_TARGET_GROUP_ARN = group.TargetGroupArn;
