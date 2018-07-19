@@ -10,8 +10,7 @@ function createWebService(cluster, name, targetGroup) {
         containerPort: 9000
       }
     ],
-    desiredCount: 1,
-    role: ''
+    desiredCount: 1
   };
   return params;
 }

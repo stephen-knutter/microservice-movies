@@ -5,13 +5,12 @@ function createUsersService(cluster, name, targetGroup) {
     taskDefinition: 'microservicemovies-review-users-td',
     loadBalancers: [
       {
-        loadBalancerName: 'microservicemovies-review',
+        targetGroupArn: targetGroup,
         containerName: 'users-service-review',
         containerPort: 3000
       }
     ],
-    desiredCount: 1,
-    role: ''
+    desiredCount: 1
   };
   return params;
 }

@@ -5,13 +5,12 @@ function createMoviesService(cluster, name, targetGroup) {
     taskDefinition: 'microservicemovies-review-movies-td',
     loadBalancers: [
       {
-        loadBalancerName: 'microservicemovies-review',
+        targetGroupArn: targetGroup,
         containerName: 'movies-service-review',
         containerPort: 3000
       }
     ],
-    desiredCount: 1,
-    role: ''
+    desiredCount: 1
   };
   return params;
 }
