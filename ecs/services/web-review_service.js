@@ -11,7 +11,7 @@ function createWebService(cluster, name, targetGroup) {
       }
     ],
     desiredCount: 1,
-    role: 'AWSServiceRoleForECS'
+    role: 'ecsServiceRole'
   };
   return params;
 }

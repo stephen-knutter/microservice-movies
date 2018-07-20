@@ -11,7 +11,7 @@ function createMoviesService(cluster, name, targetGroup) {
       }
     ],
     desiredCount: 1,
-    role: 'AWSServiceRoleForECS'
+    role: 'ecsServiceRole'
   };
   return params;
 }
