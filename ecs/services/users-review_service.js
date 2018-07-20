@@ -10,7 +10,8 @@ function createUsersService(cluster, name, targetGroup) {
         containerPort: 3000
       }
     ],
-    desiredCount: 1
+    desiredCount: 1,
+    role: 'AWSServiceRoleForECS'
   };
   return params;
 }

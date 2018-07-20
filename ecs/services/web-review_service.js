@@ -10,7 +10,8 @@ function createWebService(cluster, name, targetGroup) {
         containerPort: 9000
       }
     ],
-    desiredCount: 1
+    desiredCount: 1,
+    role: 'AWSServiceRoleForECS'
   };
   return params;
 }
